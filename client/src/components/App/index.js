@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { Container, Header, Segment, Button, Icon, Dimmer, Loader, Divider } from 'semantic-ui-react'
+import { Container} from 'semantic-ui-react'
 
-import logo from './logo.svg';
-import './App.css';
+import Loading from '../Loading'; 
+import Heading from '../Heading';
+import SideBar from '../SideBar';
 
 class App extends Component {
-
   constructor () {
     super()
     this.state = {}
-    this.getTours = this.getTours.bind(this)
+    this.getTours = this.getTours.bind(this);
+    this.getTour = this.getTour.bind(this);
   }
 
   componentDidMount() {
@@ -38,23 +39,19 @@ class App extends Component {
       .then(tour => this.setState({tour: tour}))
   }
 
+
   render() {
-    let {tours, tour} = this.state
-    {console.log(this.state)}
+    let {tours, tour, getTour} = this.state
     return tours
     ? <Container text>
-      <Header as='h2' icon textAlign='center'>
-        <Icon name='cocktail' circular />
-        <Header.Content>
-          Patrol Tours
-        </Header.Content>
-      </Header>
+    <Heading />
+    <SideBar 
+      tours={tours}
+      tour={tour}
+      getTour={this.getTour}
+    />
     </Container>
-    : <Container text>
-      <Dimmer active inverted>
-        <Loader content='Loading' />
-      </Dimmer>
-    </Container>
+    : <Loading />
   }
 }
 
