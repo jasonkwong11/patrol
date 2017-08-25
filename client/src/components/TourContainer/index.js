@@ -12,6 +12,7 @@ const TourContainer = ({title, creator, created_at, tourPoints}) => (
     <div className="creator-timestamp">
       {creator}{"  "}<Timestamp time={created_at} format="date" />
     </div>
+    <br/>
     <TourPointsContainer
       data={tourPoints}
     />

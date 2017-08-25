@@ -11,10 +11,7 @@ class TasksContainer extends Component {
     <ul>
       { this.props.map((task) => {
         <li>
-          <Task
-            problemDescription={task.problem_description}
-            createdAt={task.created_at}
-          />
+
         </li>
       })}
     </ul>
