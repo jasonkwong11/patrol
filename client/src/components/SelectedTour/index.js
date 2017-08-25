@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import { Container, Header } from 'semantic-ui-react'
+import { Container} from 'semantic-ui-react'
 
-import Heading from '../Heading'
-import Tour from '../Tour'
 import Loading from '../Loading'
 import TourContainer from '../TourContainer'
  

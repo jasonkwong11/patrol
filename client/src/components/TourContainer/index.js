@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import { Container, Header, Segment } from 'semantic-ui-react'
+import React from 'react'
+import { Container, Header } from 'semantic-ui-react'
 import Timestamp from 'react-timestamp'
 
 import TourPointsContainer from '../TourPointsContainer'
@@ -10,7 +10,8 @@ const TourContainer = ({title, creator, created_at, tourPoints}) => (
       Tour {title}
     </Header>
     <div className="creator-timestamp">
-      {creator}{"  "}<Timestamp time={created_at} format="date" />
+      {creator}{' '}<Timestamp time={created_at} format="date" />
+      
     </div>
     <br/>
     <TourPointsContainer

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container} from 'semantic-ui-react'
+import Clearfix from 'react-clearfix';
 
 import Loading from '../Loading'; 
 import Heading from '../Heading';
@@ -41,16 +42,19 @@ class App extends Component {
 
 
   render() {
-    let {tours, tour, getTour} = this.state
+    let {tours, tour} = this.state
     return tours
-    ? <Container text>
-    <Heading />
-    <SideBar 
-      tours={tours}
-      tour={tour}
-      getTour={this.getTour}
-    />
-    </Container>
+    ? <div>
+      <Container text>
+      <Heading />
+      <SideBar 
+        tours={tours}
+        tour={tour}
+        getTour={this.getTour}
+      />
+      </Container>
+      <Clearfix/>
+      </div>
     : <Loading />
   }
 }
