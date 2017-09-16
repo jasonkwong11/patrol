@@ -10,18 +10,16 @@ const TourContainer = ({title, creator, created_at, tourPoints}) => (
       <div className="one wide column">
       </div>
       <div className="fifteen wide column">
-        <div className="ui segment">
-          <Header as='h2' floated='left'>
-            Tour {title}
-          </Header>
-          <div className="creator-timestamp">
-            {creator}{' '}<Timestamp time={created_at} format="date" />
-          </div>
-          <br/>
-          <TourPointsContainer
-            data={tourPoints}
-          />
+        <Header as='h2' floated='left'>
+          Tour {title}
+        </Header>
+        <div className="creator-timestamp">
+          {creator}{' '}<Timestamp time={created_at} format="date" />
         </div>
+        <br/>
+        <TourPointsContainer
+          data={tourPoints}
+        />
       </div>
     </div>
   </Container>
